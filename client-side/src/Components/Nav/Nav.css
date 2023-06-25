@@ -1,0 +1,11 @@
+.navbar-brand {
+    border: none;
+    background-color: transparent;
+}
+
+.mega-menu {
+    background-color: #000;
+    width: 100vw;
+    height: 0;
+    transition: height 0.7s ease-in-out;
+}
