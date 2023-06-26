@@ -1,26 +1,38 @@
 import React, { useState, useEffect } from "react";
-
 import "./Nav.css";
-
 import $ from "jquery";
-
 
 function OpenMegaMenu() {
     let menu = $("#menu");
-
+    let navbar = $('#navigation');
     console.log(menu);
-  if (menu.css("height") == "100px") menu.css("height", "0");
-  else menu.css("height", "100px");
+  if (menu.css("height") === "100px") {
+ 
+    menu.css("height", "0");
+
+    setTimeout(function() {
+      navbar.css('border-bottom-right-radius','15px');
+      navbar.css('border-bottom-left-radius','15px');
+    }, 400);
+
+  } else {
+    navbar.css('border-bottom-right-radius','0');
+    navbar.css('border-bottom-left-radius','0');
+    setTimeout(function() {
+      menu.css("height", "100px");
+    }, 400);
+  }
 }
 
 function Nav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav id="navigation" className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <button className="navbar-brand" href="#">
+          {/*Logo?
+           <button className="navbar-brand" href="#">
             Navbar
-          </button>
+          </button> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -59,9 +71,30 @@ function Nav() {
               </li>
             </ul>
           </div>
+          <div className="d-flex flex-row-reverse fa-lg">
+            {/* <FontAwesomeIcon icon="check-square" /> */}
+            <i class="fa-solid fa-user"></i>
+          </div>
         </div>
       </nav>
-      <div id="menu" className="mega-menu"></div>
+      <div id="menu" className="mega-menu">
+        <div className="row">
+          <div className="col-4 menu-column">
+            <button>test </button>
+          </div>
+          <div className="col-4 menu-column">
+            <button>test </button>
+          </div>
+          <div className="col-4 menu-column d-flex justify-content-center">
+            <div className="link-group">
+              <button className="navbar-brand">test </button>
+              <button className="navbar-brand">test </button>
+              <button className="navbar-brand">test </button>
+              <button className="navbar-brand">test </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

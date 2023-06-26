@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import React, { useState, useEffect } from "react";
 import './App.css';
-import Navigation from "./Components/Nav/Nav"
+import Navigation from "./Components/Nav/Nav";
+import Body from "./Components/Body/Body";
+import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
   const [message, setMessage] = useState("");
@@ -21,6 +23,7 @@ headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-R
   return (
     <div>
       <Navigation />
+      <Body />
     </div>
   );
 }
