@@ -6,13 +6,7 @@ import Body from "./Components/Body/Body";
 import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
-  const [message, setMessage] = useState("");
 
-let headers = new Headers();
-
-headers.append("Access-Control-Allow-Origin", "*")
-headers.append("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
-headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
 
   // useEffect(() => {
   //   fetch("https://request.rado-development.eu/users")
@@ -20,10 +14,23 @@ headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-R
   //   .then((data) => setMessage(data.message));
   // },[]);
 
+const [openModal,SetOpenModal] = useState(false);
+
+
+const OpenModal = () => {
+  console.log(openModal);
+  SetOpenModal(!openModal);
+
+}
+
   return (
     <div>
-      <Navigation />
-      <Body />
+      <Navigation OpenModal={() => OpenModal()} />
+      <br/>
+      <br/>
+      <br/>
+
+      <Body openModal={openModal} />
     </div>
   );
 }

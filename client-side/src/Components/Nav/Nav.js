@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Nav.css";
 import $ from "jquery";
 
+let loading = false;
+
 function OpenMegaMenu() {
     let menu = $("#menu");
     let navbar = $('#navigation');
@@ -24,7 +26,8 @@ function OpenMegaMenu() {
   }
 }
 
-function Nav() {
+const Nav = (props) => {
+
   return (
     <div>
       <nav id="navigation" className="navbar navbar-expand-lg navbar-light">
@@ -73,7 +76,8 @@ function Nav() {
           </div>
           <div className="d-flex flex-row-reverse fa-lg">
             {/* <FontAwesomeIcon icon="check-square" /> */}
-            <i class="fa-solid fa-user"></i>
+            <button onClick={props.OpenModal} className="navbar-brand"><i class="fa-solid fa-user-gear"></i></button>
+            <button className="navbar-brand"><i class="fa-solid fa-user"></i></button>
           </div>
         </div>
       </nav>
