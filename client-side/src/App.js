@@ -16,21 +16,32 @@ function App() {
 
 const [openModal,SetOpenModal] = useState(false);
 
+const [modalType,SetModalType] = useState(null);
 
-const OpenModal = () => {
-  console.log(openModal);
+const OpenModal = (type) => {
+    switch (type) {
+      case "admin":
+        SetModalType("admin");
+        break;
+      case "profile":
+        SetModalType("profile");
+        break;
+      default:
+        SetModalType(null);
+        break;
+    }
+
   SetOpenModal(!openModal);
-
 }
 
   return (
     <div>
-      <Navigation OpenModal={() => OpenModal()} />
+      <Navigation OpenModal={OpenModal} />
       <br/>
       <br/>
       <br/>
 
-      <Body openModal={openModal} />
+      <Body openModal={openModal} modalType = {modalType} CloseModal ={OpenModal}/>
     </div>
   );
 }

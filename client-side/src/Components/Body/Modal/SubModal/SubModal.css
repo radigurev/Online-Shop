@@ -1,0 +1,33 @@
+.bigIndex {
+    z-index: 1001;
+}
+
+.subCurrentModal {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 50vh;
+    width: 60vw;
+    min-width: 600px;
+    /* border-radius: 15px; */
+    background-color: #fff;
+    /* display: none; */
+    z-index: 1002;
+    transition: top 0.3s ease-out;
+    overflow: auto;
+}
+
+#subModalHeader {
+    width: 100%;
+    /* height: 50px; */
+    padding: 0.5rem 1rem;
+}
+
+.modalContent {
+    width: 100%;
+}
+
+.subModalContent {
+    padding: 1rem 3rem;
+}

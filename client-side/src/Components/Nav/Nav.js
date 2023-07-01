@@ -3,7 +3,7 @@ import "./Nav.css";
 import $ from "jquery";
 
 let loading = false;
-
+//Bonus menu animation
 function OpenMegaMenu() {
     let menu = $("#menu");
     let navbar = $('#navigation');
@@ -25,12 +25,18 @@ function OpenMegaMenu() {
     }, 400);
   }
 }
+//Bonus menu animation END
+
 
 const Nav = (props) => {
 
+  function OpenModal(type) {
+    props.OpenModal(type);
+  }
+
   return (
     <div>
-      <nav id="navigation" className="navbar navbar-expand-lg navbar-light">
+      <nav id="navigation" className="navbar navbar-expand-lg background-color">
         <div className="container-fluid">
           {/*Logo?
            <button className="navbar-brand" href="#">
@@ -76,8 +82,8 @@ const Nav = (props) => {
           </div>
           <div className="d-flex flex-row-reverse fa-lg">
             {/* <FontAwesomeIcon icon="check-square" /> */}
-            <button onClick={props.OpenModal} className="navbar-brand"><i class="fa-solid fa-user-gear"></i></button>
-            <button className="navbar-brand"><i class="fa-solid fa-user"></i></button>
+            <button onClick={() => OpenModal('admin')} className="navbar-brand"><i class="fa-solid fa-user-gear"></i></button>
+            <button onClick={() => OpenModal('profile')} className="navbar-brand"><i class="fa-solid fa-user"></i></button>
           </div>
         </div>
       </nav>

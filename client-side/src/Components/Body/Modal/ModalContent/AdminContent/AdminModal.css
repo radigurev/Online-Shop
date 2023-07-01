@@ -1,0 +1,15 @@
+#modalContent {
+    width: 85%;
+    float: right;
+    min-width: 400px;
+}
+
+.innerContent {
+    padding: 2rem;
+}
+
+@media (max-width: 1300px) {
+    #modalContent {
+        width: 60%;
+    }
+}

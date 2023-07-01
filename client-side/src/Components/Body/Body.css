@@ -1,3 +1,11 @@
 body {
     overflow-x: hidden;
 }
+
+i {
+    color: #fff;
+}
+
+.background-color {
+    background-color: #3b3b3b;
+}

@@ -9,28 +9,40 @@ import Modal from "../Body/Modal/Modal";
 
 
 const Body = props => {
-
+//MODAL EFFECTS
   useEffect( () => {
     let modal = $("#mainModal");
     let deactivateBackground = $("#deactivate-background");
-        if (props.openModal) {
+    let body = $("#body");
+
+    if (props.openModal) {
           modal.removeClass("hidden");
           deactivateBackground.removeClass("hidden");
           deactivateBackground.animate({opacity: '1'});
-          modal.animate({ top: "55%" }, 300);
+          modal.animate({ top: "55%" }, 700);
+          body.css({overflow: 'hidden'});      
 
+        setTimeout(() => {
+          modal.animate({ borderRadius: "15px" }, 900);
+        }, 350);
 
         } else {
           modal.animate({ top: "200%" });
           deactivateBackground.animate({opacity: '0'});
+
+          body.css({overflowY: 'auto'});      
           setTimeout(() => {
             modal.addClass("hidden");
             deactivateBackground.addClass("hidden");
+            modal.css({ borderRadius: "0" });
           }, 600);
         }
     
   }, [props.openModal]);
-  
+
+
+
+  //MODAL END
 
     return (
       <div className="mt-5">
@@ -84,7 +96,7 @@ const Body = props => {
           </div>
         </div>
 
-        <Modal></Modal>
+        <Modal CloseModal={props.CloseModal} modalType = {props.modalType}/>
       </div>
     );
 }
