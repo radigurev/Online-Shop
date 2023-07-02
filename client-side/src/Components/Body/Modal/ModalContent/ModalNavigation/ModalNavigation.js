@@ -8,9 +8,10 @@ const ModalNavigation = () => {
 
     const ChangeMenu = (type) => {
 
-        $('.active').animate().removeClass('active');
+        // $('.activeTab').addClass('remove');
+        $('.activeTab').fadeOut().removeClass('activeTab').fadeIn();
 
-        $('#admin-menu-'+type+'-button').addClass('active');
+        $('#admin-menu-'+type+'-button').addClass('activeTab');
     }
 
     return (
@@ -22,7 +23,7 @@ const ModalNavigation = () => {
           <nav className="main-nav" role="navigation">
             <ul className="unstyled list-hover-slide">
               <li>
-                <button id="admin-menu-home-button" onClick={() => ChangeMenu('home')} className="active">Home</button>
+                <button id="admin-menu-home-button" onClick={() => ChangeMenu('home')} className="activeTab">Home</button>
               </li>
               <li>
                 <button id="admin-menu-navigation-button" onClick={() => ChangeMenu('navigation')} >Navigation</button>

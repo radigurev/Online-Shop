@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 
-const sequelize = require('../Connector/Connector')
+const sequelize = require('../Connector/Connector');
 
 const Role = sequelize.define('Role', {
     Id: {

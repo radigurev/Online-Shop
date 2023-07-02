@@ -53,11 +53,10 @@ const columns = [
     { id: 10, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
   ];
   
-
 const NavigationList = () => {
 
 const [OpenSubModal,SetOpenSubModal] = useState(true); 
-
+const [header, SetHeader] = useState('');
     useEffect(() => {
     
     setTimeout(() => {
@@ -67,6 +66,8 @@ const [OpenSubModal,SetOpenSubModal] = useState(true);
 
     const OpenNewModal = () => {
       SetOpenSubModal(!OpenSubModal);
+
+      SetHeader('NEW MENU');
 
       let modal = $("#subMainModal");
       let deactivateBackground = $("#sub-deactivate-background");
@@ -122,7 +123,7 @@ const [OpenSubModal,SetOpenSubModal] = useState(true);
             disableRowSelectionOnClick
           />
         </Box>
-        <SubModal CloseModal={() => OpenNewModal()} height="40" width = "500px" ><DataNavigationPanel/> </SubModal>
+        <SubModal header={header} CloseModal={() => OpenNewModal()}  height="40" width = "500px" ><DataNavigationPanel OpenModal = {!OpenSubModal}/> </SubModal>
       </div>
     );
 };

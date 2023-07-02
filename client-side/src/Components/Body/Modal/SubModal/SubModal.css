@@ -31,3 +31,9 @@
 .subModalContent {
     padding: 1rem 3rem;
 }
+
+.modalHeader {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+}

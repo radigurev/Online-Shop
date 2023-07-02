@@ -6,6 +6,7 @@ const PORT = 3961;
 //CONTROLLERS
 const RegisterController = require('./Controller/RegisterController');
 const UserController = require('./Controller/UserController');
+const AdminController = require('./Controller/AdminController');
 
 //Database
 const sequelize = require('./Database/Connector/Connector');
@@ -49,6 +50,7 @@ const corsOptions ={
 //Mapping Controllers
 app.use('/authenticate',RegisterController);
 app.use('/users',UserController);
+app.use('/admin',AdminController);
 
 app.use(cors(corsOptions));
 app.use(express.json());
