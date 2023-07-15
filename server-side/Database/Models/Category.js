@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 
 const sequelize = require('../Connector/Connector');
-const Navigation = require('./Navigation');
 
 const Category = sequelize.define('Category', {
     Id: {
@@ -18,5 +17,8 @@ const Category = sequelize.define('Category', {
     timestamps: true
 });
 
+Category.associate = function(models) {
+    Category.belongsToMany(models.Navigation, {foreignKey:'CategoryId',through: "navigation_categories",as:'category'});
+}
 
 module.exports = Category;

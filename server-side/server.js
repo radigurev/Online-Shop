@@ -55,9 +55,9 @@ app.use('/admin',AdminController);
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// sequelize.sync();
+sequelize.sync();
 
-// sequelize.sync({ alter: true });
+sequelize.sync({ alter: true });
 
 app.listen(PORT, () => {
     console.log("Server-side is running on port :",PORT);

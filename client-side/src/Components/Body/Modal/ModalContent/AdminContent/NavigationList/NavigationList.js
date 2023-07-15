@@ -67,7 +67,7 @@ const [header, SetHeader] = useState('');
     const OpenNewModal = () => {
       SetOpenSubModal(!OpenSubModal);
 
-      SetHeader('NEW MENU');
+      SetHeader('NEW navigation');
 
       let modal = $("#subMainModal");
       let deactivateBackground = $("#sub-deactivate-background");
@@ -123,7 +123,7 @@ const [header, SetHeader] = useState('');
             disableRowSelectionOnClick
           />
         </Box>
-        <SubModal header={header} CloseModal={() => OpenNewModal()}  height="40" width = "500px" ><DataNavigationPanel OpenModal = {!OpenSubModal}/> </SubModal>
+        <SubModal header={header} CloseModal={() => OpenNewModal()}  height="43" width = "500px" ><DataNavigationPanel OpenModal = {!OpenSubModal}/> </SubModal>
       </div>
     );
 };

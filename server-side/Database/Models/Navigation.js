@@ -22,7 +22,9 @@ const Navigation = sequelize.define('Navigation', {
     timestamps: true
 });
 
-// Navigation.belongsToMany(Category, {through: 'Navigation_Categories'});
-// Category.belongsToMany(Navigation, {through: 'Navigation_Categories'});
+
+Navigation.belongsToMany(Category, {foreignKey: 'NavigationId',through: "navigation_categories", as: 'category'});
+
+Category.belongsToMany(Navigation, {foreignKey: 'CategoryId',through: "navigation_categories", as: 'navigation'});
 
 module.exports = Navigation;
